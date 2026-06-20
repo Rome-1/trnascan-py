@@ -1,0 +1,25 @@
+.runtime/
+.claude/
+.opencode/
+.logs/
+__pycache__/
+state.json
+mail/
+.beads/
+
+# Python
+.venv/
+venv/
+*.egg-info/
+*.egg
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.pyc
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md

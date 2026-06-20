@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "trnascan-py"
+version = "0.1.0"
+description = "A fast Python interface for tRNA gene detection, driving Infernal covariance-model search."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{ name = "trnascan-py contributors" }]
+keywords = ["tRNA", "bioinformatics", "infernal", "covariance-model", "trnascan"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.4",
+    "mypy>=1.8",
+]
+
+[project.scripts]
+trnascan-py = "trnascan_py.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Rome-1/trnascan-py"
+Repository = "https://github.com/Rome-1/trnascan-py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/trnascan_py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4"]
+
+[tool.ruff.lint.per-file-ignores]
+# Captured tool output fixtures are reproduced verbatim (fixed-width columns).
+"tests/test_parsers.py" = ["E501"]
+"tests/test_anticodon.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src", "tests"]
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "differential: differential tests against reference tRNAscan-SE 2.0 (require external tools)",
+    "requires_infernal: tests that require Infernal (cmsearch) on PATH",
+    "requires_trnascan: tests that require reference tRNAscan-SE 2.0 on PATH",
+]

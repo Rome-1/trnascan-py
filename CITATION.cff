@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: >-
+  If you use trnascan-py, please also cite the underlying tools it depends on:
+  tRNAscan-SE 2.0 and Infernal (see references).
+title: trnascan-py
+abstract: >-
+  A fast Python interface for tRNA gene detection that drives Infernal
+  covariance-model search with the tRNAscan-SE 2.0 models, validated against
+  reference tRNAscan-SE 2.0.
+version: 0.1.0
+license: GPL-3.0-or-later
+repository-code: https://github.com/Rome-1/trnascan-py
+type: software
+authors:
+  - name: trnascan-py contributors
+references:
+  - type: article
+    title: "tRNAscan-SE 2.0: improved detection and functional classification of transfer RNA genes"
+    authors:
+      - family-names: Chan
+        given-names: Patricia P.
+      - family-names: Lin
+        given-names: Brian Y.
+      - family-names: Mak
+        given-names: Allysia J.
+      - family-names: Lowe
+        given-names: Todd M.
+    year: 2021
+  - type: article
+    title: "Infernal 1.1: 100-fold faster RNA homology searches"
+    authors:
+      - family-names: Nawrocki
+        given-names: Eric P.
+      - family-names: Eddy
+        given-names: Sean R.
+    journal: Bioinformatics
+    year: 2013
