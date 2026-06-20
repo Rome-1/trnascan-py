@@ -163,10 +163,11 @@ routine scanning of many multi-gigabase genomes).
 
 ## License
 
-trnascan-py is licensed **GPL-3.0-or-later** (see [LICENSE](LICENSE)). It derives
-some logic from the reference tRNAscan-SE 2.0 (GPL-3) and depends at runtime on
-Infernal (GPL-3) and tRNAscan-SE 2.0, which you install separately; their
-covariance models are used at runtime and are not bundled or redistributed here.
+Copyright © 2026 Rome Thorstenson. trnascan-py is licensed **GPL-3.0-or-later**
+(see [LICENSE](LICENSE)). It derives some logic from the reference tRNAscan-SE 2.0
+(GPL-3) and depends at runtime on Infernal (GPL-3) and tRNAscan-SE 2.0, which you
+install separately; their covariance models are used at runtime and are not
+bundled or redistributed here.
 
 ## Citing
 
