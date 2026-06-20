@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://github.com/Rome-1/trnascan-py/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 0000000000000000000000000000000000000000000000000000000000000000  # filled at release
+  sha256: 65ff223b430815f22c87357cc9bd40e3f4021a1e36e85fe9ad73f5b263420897
 
 build:
   noarch: python
