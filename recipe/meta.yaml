@@ -13,9 +13,8 @@ package:
   version: {{ version }}
 
 source:
-  # Replace with the published sdist URL + sha256 at release time, e.g. PyPI:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/trnascan_py-{{ version }}.tar.gz
-  sha256: 0000000000000000000000000000000000000000000000000000000000000000  # TODO: fill at release
+  url: https://github.com/Rome-1/trnascan-py/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 0000000000000000000000000000000000000000000000000000000000000000  # filled at release
 
 build:
   noarch: python
