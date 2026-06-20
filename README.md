@@ -171,12 +171,12 @@ covariance models are used at runtime and are not bundled or redistributed here.
 ## Citing
 
 If you use trnascan-py in your research, please cite it **together with** the
-tools it builds on (it drives them; it does not replace them):
+tools it builds on (it drives them; it does not replace them). See
+[`CITATION.cff`](CITATION.cff) or GitHub's "Cite this repository" button for the
+full citation metadata.
 
 - **trnascan-py** — Thorstenson, R. *trnascan-py: a fast Python interface for tRNA
   gene detection.* https://github.com/Rome-1/trnascan-py
-  (ORCID [0009-0003-6510-2032](https://orcid.org/0009-0003-6510-2032)).
-  See [`CITATION.cff`](CITATION.cff) or GitHub's "Cite this repository" button.
 - **tRNAscan-SE 2.0** — Chan, Lin, Chen, Huang, Hann, Lowe.
   *tRNAscan-SE 2.0: improved detection and functional classification of transfer
   RNA genes.* (2021).
