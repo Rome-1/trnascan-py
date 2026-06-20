@@ -1,5 +1,10 @@
 # trnascan-py
 
+[![CI](https://github.com/Rome-1/trnascan-py/actions/workflows/ci.yml/badge.svg)](https://github.com/Rome-1/trnascan-py/actions/workflows/ci.yml)
+[![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/recipes/trnascan-py/README.html)
+[![Bioconda version](https://img.shields.io/conda/vn/bioconda/trnascan-py.svg)](https://anaconda.org/bioconda/trnascan-py)
+[![License: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](LICENSE)
+
 **A fast Python interface for tRNA gene detection.**
 
 Transfer-RNA genes are short (~70–90 nt) structured genes scattered across
