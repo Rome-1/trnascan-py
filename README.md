@@ -74,31 +74,32 @@ that dominates; it is not a scaling effect. Median speedup across the corpus is
 
 ## Requirements
 
-trnascan-py is pure-Python glue; the search engine and covariance models are
-**external runtime dependencies** (not bundled — see [License](#license)):
-
 - Python ≥ 3.10
-- [Infernal](http://eddylab.org/infernal/) 1.1.x (`cmsearch` on `PATH`)
-- [tRNAscan-SE 2.0](http://lowelab.ucsc.edu/tRNAscan-SE/) — provides the bundled
-  tRNA covariance models trnascan-py searches with, and serves as the differential
-  oracle.
+- The Infernal **`cmsearch`** binary on `PATH`
+  ([Infernal](http://eddylab.org/infernal/) 1.1.x) — the search engine.
+- The tRNA **covariance models**. These are **bundled with the package**, so a
+  plain `pip install` is self-contained; you only need the `cmsearch` binary.
+  (A system [tRNAscan-SE 2.0](http://lowelab.ucsc.edu/tRNAscan-SE/) install, if
+  present, takes precedence and is also what the differential test suite uses as
+  its oracle.) See [License](#license) for the bundled models' provenance.
 
-Install the engines (Debian/Ubuntu), or via conda:
-
-```bash
-sudo apt-get install -y infernal trnascan-se
-# or: conda install -c bioconda infernal trnascan-se
-```
-
-If the models are not auto-discovered, set `TRNASCAN_MODELS_DIR` to the directory
-containing `TRNAinf-*.cm` (e.g. `/usr/share/trnascan-se/models`).
+To override model discovery, set `TRNASCAN_MODELS_DIR` to a directory containing
+`TRNAinf-*.cm`.
 
 ## Install
 
+**conda (one command — pulls the engine + models via tRNAscan-SE):**
+
 ```bash
-pip install git+https://github.com/Rome-1/trnascan-py.git   # latest
-# or, from a checkout:
-pip install .
+conda install -c bioconda trnascan-py
+```
+
+**pip (models bundled; install the `cmsearch` binary separately):**
+
+```bash
+pip install git+https://github.com/Rome-1/trnascan-py.git   # latest; or: pip install .
+# then ensure cmsearch is available, e.g.:
+sudo apt-get install -y infernal        # or: conda install -c bioconda infernal
 ```
 
 For development (editable install with test/lint tooling), see
@@ -165,9 +166,11 @@ routine scanning of many multi-gigabase genomes).
 
 Copyright © 2026 Rome Thorstenson. trnascan-py is licensed **GPL-3.0-or-later**
 (see [LICENSE](LICENSE)). It derives some logic from the reference tRNAscan-SE 2.0
-(GPL-3) and depends at runtime on Infernal (GPL-3) and tRNAscan-SE 2.0, which you
-install separately; their covariance models are used at runtime and are not
-bundled or redistributed here.
+(GPL-3) and drives the Infernal `cmsearch` binary (GPL-3), which you install
+separately. The tRNA **covariance models bundled in this package are
+redistributed unmodified from tRNAscan-SE 2.0 under GPL-3** — see
+[`src/trnascan_py/data/models/NOTICE.md`](src/trnascan_py/data/models/NOTICE.md).
+The Infernal / tRNAscan-SE compiled executables are **not** bundled.
 
 ## Citing
 

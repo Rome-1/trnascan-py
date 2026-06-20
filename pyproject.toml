@@ -38,6 +38,12 @@ Repository = "https://github.com/Rome-1/trnascan-py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/trnascan_py"]
+# Bundle the covariance-model data files (non-Python) into the wheel.
+artifacts = ["src/trnascan_py/data/models/*"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/trnascan_py", "tests", "scripts", "docs", "README.md", "LICENSE"]
+artifacts = ["src/trnascan_py/data/models/*"]
 
 [tool.ruff]
 line-length = 100

@@ -1,11 +1,16 @@
-"""Locating the bundled tRNA covariance models that ship with tRNAscan-SE.
+"""Locating the tRNA covariance models.
 
-v1 reuses the covariance models distributed with tRNAscan-SE 2.0 rather than
-shipping its own copies. The models directory is discovered from (in order):
+The models directory is discovered from (in order):
 
 1. the ``TRNASCAN_MODELS_DIR`` environment variable,
-2. the standard package install location (``/usr/share/trnascan-se/models``),
-3. a sibling ``models`` directory next to a ``tRNAscan-SE`` on ``PATH``.
+2. the standard tRNAscan-SE install location (``/usr/share/trnascan-se/models``),
+3. a sibling ``models`` directory next to a ``tRNAscan-SE`` on ``PATH``,
+4. the copy **bundled with this package** (``trnascan_py/data/models``).
+
+A system tRNAscan-SE install therefore takes precedence; the bundled copy is the
+fallback that lets ``trnascan-py`` run with only the Infernal ``cmsearch`` binary
+present. The bundled models are redistributed from tRNAscan-SE 2.0 under GPL-3 —
+see ``trnascan_py/data/models/NOTICE.md``.
 """
 
 from __future__ import annotations
@@ -20,6 +25,9 @@ _DEFAULT_DIRS = (
     "/usr/local/share/trnascan-se/models",
     "/opt/homebrew/share/trnascan-se/models",
 )
+
+# Covariance models bundled inside the installed package (the fallback).
+_BUNDLED_MODELS_DIR = Path(__file__).parent / "data" / "models"
 
 
 class ModelsNotFoundError(RuntimeError):
@@ -82,6 +90,8 @@ def find_models_dir(override: str | Path | None = None) -> Path:
     if trnascan:
         prefix = Path(trnascan).resolve().parent.parent
         candidates.append(prefix / "share" / "trnascan-se" / "models")
+
+    candidates.append(_BUNDLED_MODELS_DIR)  # fallback: models shipped in the wheel
 
     for c in candidates:
         if c.is_dir():
