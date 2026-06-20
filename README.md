@@ -168,13 +168,24 @@ some logic from the reference tRNAscan-SE 2.0 (GPL-3) and depends at runtime on
 Infernal (GPL-3) and tRNAscan-SE 2.0, which you install separately; their
 covariance models are used at runtime and are not bundled or redistributed here.
 
+## Citing
+
+If you use trnascan-py in your research, please cite it **together with** the
+tools it builds on (it drives them; it does not replace them):
+
+- **trnascan-py** — Thorstenson, R. *trnascan-py: a fast Python interface for tRNA
+  gene detection.* https://github.com/Rome-1/trnascan-py
+  (ORCID [0009-0003-6510-2032](https://orcid.org/0009-0003-6510-2032)).
+  See [`CITATION.cff`](CITATION.cff) or GitHub's "Cite this repository" button.
+- **tRNAscan-SE 2.0** — Chan, Lin, Chen, Huang, Hann, Lowe.
+  *tRNAscan-SE 2.0: improved detection and functional classification of transfer
+  RNA genes.* (2021).
+- **Infernal 1.1** — Nawrocki & Eddy. *Infernal 1.1: 100-fold faster RNA homology
+  searches.* Bioinformatics (2013).
+
 ## Acknowledgements
 
 This project stands on [tRNAscan-SE](http://lowelab.ucsc.edu/tRNAscan-SE/)
 (Todd Lowe, Patricia Chan, and Sean Eddy) and
-[Infernal](http://eddylab.org/infernal/) (Eddy–Rivas labs). Please cite their
-papers if you use trnascan-py in research:
-
-- Chan, Lin, Chen, Huang, Hann, Lowe. *tRNAscan-SE 2.0.* (2021).
-- Nawrocki & Eddy. *Infernal 1.1: 100-fold faster RNA homology searches.*
-  Bioinformatics (2013).
+[Infernal](http://eddylab.org/infernal/) (Eddy–Rivas labs) — the engines and
+covariance models that do the core science here.

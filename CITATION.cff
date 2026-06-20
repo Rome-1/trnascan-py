@@ -12,7 +12,9 @@ license: GPL-3.0-or-later
 repository-code: https://github.com/Rome-1/trnascan-py
 type: software
 authors:
-  - name: trnascan-py contributors
+  - family-names: Thorstenson
+    given-names: Rome
+    orcid: https://orcid.org/0009-0003-6510-2032
 references:
   - type: article
     title: "tRNAscan-SE 2.0: improved detection and functional classification of transfer RNA genes"
